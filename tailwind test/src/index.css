@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    font-family: 'Montserrat';
+}
+
+.scrolling-text {
+    animation: scrollText 15s linear infinite;
+}
+
+.items-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    column-gap: 2rem;
+    row-gap: 2.5rem;
+}
+
+@media (min-width: 768px) {
+    .items-container {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr)); 
+        grid-template-rows: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+.item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 352px;
+    text-align: center;
+}
+
+@media (min-width: 640px) {
+    .items-container {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}
+
+.discount {
+    position: absolute;
+    margin-top: 0.5rem;
+    color: white;
+    background-color: #664164;
+    border-radius: 0.25rem;
+    padding: 0.125rem 0.5rem;
+    margin-left: -0.75rem;
+}
+
+@media (min-width: 640px) {
+    .discount {
+        margin-left: -1.75rem;
+    }
+}
+
+.item-title {
+    font-size: 1.5rem;
+    line-height: 1.375em;
+}
+
+.item-description {
+    font-size: 0.875rem;
+    line-height: 1.375em;
+}
+
+.item-promo-price {
+    font-size: 1.5rem;
+    line-height: 1.375em;
+    margin: 0.25rem 0;
+}
+
+.item-previous-price {
+    text-decoration: line-through;
+    opacity: 0.8;
+}
+
+.item-best-price-text {
+    font-size: 0.625rem;
+    font-weight: 500;
+    line-height: 1.375em;
+}
+
+.item-best-price-component {
+    display: flex;
+    gap: 0.25rem;
+    width: 100%;
+    justify-content: center;
+}
+
+.add-to-cart {
+    width: 100%;
+    padding: 0.625rem 0.9375rem;
+    color: white;
+    background-color: #816c65;
+}
+
+@keyframes scrollText {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
